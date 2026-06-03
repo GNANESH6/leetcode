@@ -8,7 +8,7 @@ class Solution {
             char ch=s.charAt(r);
             map.put(ch, map.getOrDefault(ch, 0) + 1);
             mostfreq = Math.max(mostfreq, map.get(ch));
-            while( (r-l+1-mostfreq)>k){
+            while( (r-l+1-mostfreq) >k){
                 char h=s.charAt(l);
                 map.put(h,map.getOrDefault(h,0)-1);
                 if(map.get(h)==0) map.remove(h);
@@ -18,9 +18,5 @@ class Solution {
         }
         return max;
     } 
-    static int mostFreq(Collection<Integer> values){
-        int mf=0;
-        for(Integer v:values) mf=Math.max(mf,v);
-        return (int)mf;
-    }
+
 }
