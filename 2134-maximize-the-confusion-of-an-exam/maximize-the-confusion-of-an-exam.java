@@ -1,15 +1,11 @@
 class Solution {
     public int maxConsecutiveAnswers(String answerKey, int k) {
-        int tc=count(answerKey,'T',k);
-        int fc=count(answerKey,'F',k);
-        return Math.max(tc,fc);
-    }
-    
+        return Math.max(count(answerKey,'T',k),count(answerKey,'F',k));
+    }    
     static int count(String st, char ch, int k){
          int c=0,r=0,l=0,n=st.length(), max=0;
          for(;r<n;r++){
-            char cha=st.charAt(r);
-            if(ch!=cha) c++;
+            if(ch!=st.charAt(r)) c++;
             while(c>k && l<=r){
                 if(st.charAt(l)!=ch) c--;
                 l++;
